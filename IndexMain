@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Made-Up Land</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #333;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      gap: 18px;
+      border-bottom: 1px solid #2e2e2e;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border: 1px solid #3d3d3d;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    nav button:hover {
+      background-color: #393939;
+    }
+
+    section {
+      display: none;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 30px 80px;
+      box-sizing: border-box;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #ffffff;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .route-card {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .route-card h3 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      font-weight: 600;
+      color: #ffd166;
+    }
+
+    .route-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #06d6a0;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 30px;
+    }
+
+    .route-detail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .route-detail img {
+      flex: 2;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .route-description {
+      flex: 1;
+      min-width: 280px;
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      background: #1a1a1a;
+      border-top: 1px solid #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+
+      .route-detail {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Made-Up Land</h1>
+    <img src="images/logo.png" alt="Logo" />
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('slab')">Slab</button>
+    <button onclick="showPage('cave')">Cave</button>
+    <button onclick="showPage('highwall')">High Wall</button>
+    <button onclick="showPage('20wall')">20° Wall</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>Welcome</h2>
+    <p>Welcome to <strong>Made-Up Land</strong> - a digital climbing world filled with made-ups. We all love them, and over the years I, Gleb, have risen to a diferent level of made-up making. After months of development, I present to you a place you can go to check out the latest sick made-ups. I will be keeping this site up to date, so be sure to come back regularly!</p>
+  </section>
+
+  <section id="slab">
+    <h2>Slab Wall</h2>
+    <div class="route-card">
+      <h3><a href="#" onclick="showPage('LeanOverMadness')">Lean Over Madness</a></h3>
+      <p>Start on the arete, then move into a tricky lean over to a press. Finish both hands on a jug after pressing your way up the wall.</p>
+      <span class="tag">V6</span>
+    </div>
+  </section>
+
+  <section id="cave">
+    <h2>Cave Wall</h2>
+    <div class="route-card">
+      <h3><a href="#" onclick="showPage('crimpsymphony')">Crimp Symphony</a></h3>
+      <p>If you want a crimpy, tensiony route, this is the one! Start wide on two crimps and foot of to the side, and then grind to shift your wait over the foot. After a crimpy shoulder move, finish out on a releaving sloper.</p>
+      <span class="tag">V5</span>
+    </div>
+    <div class="route-card">
+      <h3><a href="#" onclick="showPage('crimporchestra')">Crimp Orchestra</a></h3>
+      <p>Another crimpy creation, this route is perfect if you like crimps but find Crimp Symphony a bit too easy. It includes a similar weight shift as Crimp Symphony, and then a tricky bump into an undercling, which is followed by more crimps that lead to the finish.</p>
+      <span class="tag">V8</span>
+    </div>
+  </section>
+
+  <section id="highwall">
+    <h2>High Wall</h2>
+    <div class="route-card">
+      <h3><a href="#" onclick="showPage('DynoTime')">Dyno Time</a></h3>
+      <p>Start on a undercling jug, then leap into a pinch. Campus your way to the next hold, then bring your foot up to finish on a jug.</p>
+      <span class="tag">V4</span>
+    </div>
+  </section>
+
+  <section id="20wall">
+    <h2>20° Wall</h2>
+    <div class="route-card">
+      <h3><a href="#" onclick="showPage('Back')">Back And Forth</a></h3>
+      <p>Start on a jug, jump to a jug. Make sure to keep your momentum so you can make it to the next hold, after which get your feet back on and finish it off.</p>
+      <span class="tag">V3</span>
+    </div>
+  </section>
+
+  <section id="crimpsymphony">
+    <h2>Crimp Symphony</h2>
+    <div class="route-detail">
+      <img src="images/bat-hang.jpg" alt="Crimp Symphony route photo" />
+      <div class="route-description">
+        <h3>Route Description</h3>
+        <p>If you want a crimpy, tensiony route, this is the one! Start wide on two crimps and foot of to the side, and then grind to shift your wait over the foot. After a crimpy shoulder move, finish out on a releaving sloper.</p>
+        <span class="tag">V5</span><br /><br />
+        <button onclick="showPage('cave')">← Back to Cave Wall</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="crimporchestra">
+    <h2>Crimp Orchestra</h2>
+    <div class="route-detail">
+      <img src="images/bat-hang.jpg" alt="Crimp Orchestra route photo" />
+      <div class="route-description">
+        <h3>Route Description</h3>
+        <p>Another crimpy creation, this route is perfect if you like crimps but find Crimp Symphony a bit too easy. It includes a similar weight shift as Crimp Symphony, and then a tricky bump into an undercling, which is followed by more crimps that lead to the finish.</p>
+        <span class="tag">V8</span><br /><br />
+        <button onclick="showPage('cave')">← Back to Cave Wall</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="LeanOverMadness">
+    <h2>Lean Over Madness</h2>
+    <div class="route-detail">
+      <img src="images/lean-over.jpg" alt="Lean Over Madness route photo" />
+      <div class="route-description">
+        <h3>Route Description</h3>
+        <p>Start on the arete, then move into a tricky lean over to a press. Finish both hands on a jug after pressing your way up the wall.</p>
+        <span class="tag">V6</span><br /><br />
+        <button onclick="showPage('slab')">← Back to Slab Wall</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="DynoTime">
+    <h2>Dyno Time</h2>
+    <div class="route-detail">
+      <img src="images/Untitled_design.pdf" alt="Dyno Time route photo" />
+      <div class="route-description">
+        <h3>Route Description</h3>
+        <p>Start on a undercling jug, then leap into a pinch. Campus your way to the next hold, then bring your foot up to finish on a jug.</p>
+        <span class="tag">V4</span><br /><br />
+        <button onclick="showPage('highwall')">← Back to High Wall</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="Back">
+    <h2>Back And Forth</h2>
+    <div class="route-detail">
+      <img src="images/lean-over.jpg" alt="Back And Forth route photo" />
+      <div class="route-description">
+        <h3>Route Description</h3>
+        <p>Start on a jug, jump to a jug. Make sure to keep your momentum so you can make it to the next hold, after which get your feet back on and finish it off.</p>
+        <span class="tag">V3</span><br /><br />
+        <button onclick="showPage('20wall')">← Back to 20° Wall</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made by Gleb Sasinouski</p>
+  </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
